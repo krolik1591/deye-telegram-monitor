@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  bot:
+    build: ./bot
+    container_name: electric_bot
+    restart: "always"
+    stop_signal: SIGINT
+    env_file:
+      - bot/.env
