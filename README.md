@@ -9,6 +9,8 @@
 
 Built for multi-tenant use: every registered user has their own Deye device, their own blackout group, optionally their own Telegram channel, and optionally their own smart-plug backend. Features are opt-in — the UI adapts per user based on what they've configured.
 
+> **ℹ️ Registration status:** for now, new Deye users on the hosted instance can only be added by the developer — I want to test with more than 2 members before opening public registration. **But the project is fully open source: anyone can clone it and self-host their own instance.** See [Getting started](#getting-started) below.
+
 ---
 
 ## Features
