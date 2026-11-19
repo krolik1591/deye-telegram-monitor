@@ -21,9 +21,58 @@ Built for multi-tenant use: every registered user has their own Deye device, the
 - 🔌 **Tapo smart plugs** — auto-toggles plugs based on grid state; manual toggle + per-plug "auto-control" switch in the menu. Admin-only in the current deployment, opt-in per user by setting `plug_service="tapo_local"`.
   > ⚠ **LAN-only**: the Tapo P110 uses a local control API — **the bot process must run on the same network as the plugs**. A VPS deployment can't control them. Supports **Tapo P110 only** today; other models (P100 / P105 / P115) would need `PlugClient` changes.
 - 📢 **Channel broadcasting** — users with a `channel_id` get their group's blackout schedule pinned to their channel and auto-edited every tick, plus `svitlo_on/off` posts.
+- 🔔 **Battery-level alerts** — fully configurable per user. Defaults trigger at **75% ☘️ / 50% ⚠️ / 25% ‼️** of battery charge while running on battery; each threshold fires at most once per discharge cycle and resets when the grid returns.
 - 👥 **Invite flow** — owners can share deep links via Telegram's native **chat picker** (`switch_inline_query_chosen_chat`) → inline-article → `t.me/<bot>?start=invite_<token>`. One-click guest joining, with the Mongo `invites` collection TTL-cleaned every 24 h.
 - ⚙️ **In-app settings** — FSM-driven menu to set `yasno_group`, verify + save `channel_id` (bot posts a test message first; only persists if it worked), invite members.
 - 🚀 **Bootstrap on empty DB** — first boot reads `.env`, auto-hashes the Deye password if it's plaintext, writes `.env` back, inserts the first `DeyePersonal`. Zero manual DB prep.
+
+## Screenshots
+
+**Live status card** — same card, grid vs. battery state:
+
+<p>
+  <img src=".github/screenshots/charging_template.png" alt="Status while charging from grid" width="280" />
+  &nbsp;&nbsp;
+  <img src=".github/screenshots/discharging_template.png" alt="Status while running on battery" width="280" />
+</p>
+
+**Yasno schedule & settings menu:**
+
+<p>
+  <img src=".github/screenshots/schedule_template.png" alt="Yasno schedule — today and tomorrow" width="260" />
+  &nbsp;&nbsp;
+  <img src=".github/screenshots/menu_template.png" alt="Settings menu" width="290" />
+</p>
+
+**Tapo plug list & per-plug control:**
+
+<p>
+  <img src=".github/screenshots/rozetki_template.png" alt="Plug list" width="260" />
+  &nbsp;&nbsp;
+  <img src=".github/screenshots/rozetki_control_template.png" alt="Plug control (manual toggle + auto-control switch)" width="320" />
+</p>
+
+**Power event alerts** (light off / light on):
+
+<p>
+  <img src=".github/screenshots/svitlo_off_alert.png" alt="Light off alert" width="420" />
+  &nbsp;&nbsp;
+  <img src=".github/screenshots/svitlo_on_alert.png" alt="Light on alert" width="260" />
+</p>
+
+**Battery-level alerts** — configurable per user, defaults to 75% / 50% / 25% thresholds:
+
+<p>
+  <img src=".github/screenshots/alert1.png" alt="Battery alert at ~75% threshold" width="320" />
+  &nbsp;&nbsp;
+  <img src=".github/screenshots/alert2.png" alt="Battery alert at ~50% threshold" width="320" />
+</p>
+
+**Hourly stats image** (7-day example):
+
+<p>
+  <img src=".github/screenshots/svitlo_stats_template.png" alt="7-day hourly grid-availability chart" width="700" />
+</p>
 
 ## Architecture at a glance
 
