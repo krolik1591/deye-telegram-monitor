@@ -220,12 +220,6 @@ The rest of `tests/` are **scratch probes** for manual use:
 | `emit_events.py` | Manually trigger `SvitloOn/Off / PowerAlert / New/UpdateSchedule` to test the pipeline end-to-end. |
 | `main.py` | One-shot `DeyeManager.get_item` → pprint. |
 
-## Recent engineering
-
-- [`fix: cancel background tasks on shutdown`](../../commit/024cc27) — `asyncio.gather(*tasks).cancel()` was cancelling the wrapper, not the tasks; Yasno and plug loops leaked until process-kill.
-- [`fix: don't crash when deye_basic is None`](../../commit/e804e22) — `MessageService.__init__` dereferenced an `Optional` without a guard; already-seeded deployments without the bootstrap env block couldn't boot.
-- [`fix: lazy-load PIL fonts and render off the event loop`](../../commit/799a2b2) — fonts now resolve on first access with a `load_default()` fallback (macOS dev no longer breaks the import), and `generate_visual_stats` wraps the Pillow draw in `asyncio.to_thread` so `/stats` stops freezing the dispatcher.
-
 ## Documentation
 
 - [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — verified architecture notes, current data model, open risks, inspection boundaries.
