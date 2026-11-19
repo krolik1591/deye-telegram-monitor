@@ -368,7 +368,7 @@ Unknown / undocumented reasoning: none important enough to flag.
 
 ## I. Audit and Improvement Roadmap
 
-Still open from the last `OPEN_SOURCE_REVIEW.md`:
+Still open:
 
 **Before publishing to GitHub:**
 1. Rotate every credential in `git log -S` — Deye `APP_SECRET`, Deye password, Tapo password, `PROD_BOT_TOKEN`.

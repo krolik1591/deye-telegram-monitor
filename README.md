@@ -178,7 +178,6 @@ The rest of `tests/` are **scratch probes** for manual use:
 ## Documentation
 
 - [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — verified architecture notes, current data model, open risks, inspection boundaries.
-- [`OPEN_SOURCE_REVIEW.md`](OPEN_SOURCE_REVIEW.md) — pre-publication assessment (secrets, bugs, and what still blocks "wow").
 
 ## Contributing
 
