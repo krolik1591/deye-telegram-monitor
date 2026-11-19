@@ -364,7 +364,7 @@ Decisions worth not reversing without thought:
 9. **Channel pin storage keyed on `channel_id`** — `config._id = "schedule_msg:{channel_id}"`. Scales to as many channels as you have personals.
 10. **Dispatch router order** — settings first (owns the unified `/cancel`), then stats, then home/schedule/plugs/inline. Non-overlapping by design.
 
-Unknown / undocumented reasoning: none important enough to flag; the `CHANGES.md` write-ups captured the big ones (per-group Yasno, per-personal channel, plug feature flag).
+Unknown / undocumented reasoning: none important enough to flag.
 
 ## I. Audit and Improvement Roadmap
 

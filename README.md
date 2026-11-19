@@ -178,7 +178,6 @@ The rest of `tests/` are **scratch probes** for manual use:
 ## Documentation
 
 - [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — verified architecture notes, current data model, open risks, inspection boundaries.
-- [`CHANGES.md`](CHANGES.md) — the refactor arc that got the project to today (per-group Yasno, per-personal channel, plug-service flag, inline invite flow, bootstrap on empty DB).
 - [`OPEN_SOURCE_REVIEW.md`](OPEN_SOURCE_REVIEW.md) — pre-publication assessment (secrets, bugs, and what still blocks "wow").
 
 ## Contributing
